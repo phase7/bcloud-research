@@ -29,6 +29,7 @@ This command wil create a database with your name (default user). After that you
 ```
 psql
 ```
-# image1 psql first run
+![psaql-first-run][image1]
 
 
+[image1]: https://github.com/phase7/bcloud-research/blob/phase7-install-postgres/assets/psql-first-run_20200812_174505.png "psql-first-run"
