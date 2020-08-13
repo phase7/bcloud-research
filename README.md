@@ -13,8 +13,10 @@ We can get into the shell by executing psql command. We will likely see our defa
 | \q        | quit psql                                                   |
 | \i FILE   | execute commands from file                                  |
 | \d        | list tables, views, and sequences                           |
+| \d TABLENAME| Show table schema                                        |
 | \l        | list databases                                              |
 | \c DBNAME | connect to new database DBNAME (currently default username) |
+| \x        | Expand view; To see long table records in a beautiful manner|
 
 ## Basic SQL (usual commands that are common in all DBs)
 
