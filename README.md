@@ -54,12 +54,29 @@ Following are some basic sql commands for beginners. (will update as I go on)
 | Remove a constraint                    | ALTER TABLE person DROP CONSTRAINT constraint_name                                                                                                                              | Remove a constraint that is already set on column.[Check for details on constraints here](https://www.postgresql.org/docs/9.4/ddl-constraints.html)                                                                                  |
 | Ignore exceptions                      | INSERT into tablename (col_name) VALUES ('values') ON CONFLICT (unique_col) DO NOTHING;                                                                                         | If an constraint is not maintained in a new insert query, you can skip it.                                                                                                                                                           |
 | Handle exceptions                      | INSERT into tablename (col_name) VALUES ('values') ON CONFLICT (unique_col) DO UPDATE SET col_name=EXCLUDED.col_name;                                                           | You can handle the exception and take proper actions to resolve the issue.Here the `EXCLUDED` refers to the new entry's values.                                                                                                      |
-| Add foreign key                        | CREATE TABLE person (id BIGSERIAL NOT NULL PRIMARY KEY,first_name VARCHAR(50) NOT NULL,last_name VARCHAR(50) NOT NULL,car_id BIGINT REFERENCES car (id),UNIQUE (car_id) ); | Add a foreign key column using `REFERENCE` keyword                                                                                                                                                                                   |
+| Add foreign key                        | CREATE TABLE person (id BIGSERIAL NOT NULL PRIMARY KEY,first_name VARCHAR(50) NOT NULL,last_name VARCHAR(50) NOT NULL,car_id BIGINT REFERENCES car (id),UNIQUE (car_id) );      | Add a foreign key column using `REFERENCE` keyword                                                                                                                                                                                   |
 
 ## Join operations
+[Join from postgres](https://www.postgresql.org/docs/12/queries-table-expressions.html#QUERIES-FROM)
+
 | Operation                                            | Query                                                  | What you should know about them                                                              |
 |------------------------------------------------------|--------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| Inner join, get the common result                    | SELECT * FROM person JOIN car ON person.car_id=car.id; | merge two tables based on the condition and get only the common result(s)                    |
+| Inner join, get the common result                    | `SELECT * FROM person JOIN car ON person.car_id=car.id;` | merge two tables based on the condition and get only the common result(s)                  |
 | Left join, get the common plus all of the left table | SELECT * FROM person LEFT JOIN car using(car_uid)      | In this join you'll get all inner join results with the complete left table you have joined. |
 
+## Date and Time  on Postgres
+For date and time operations, the `NOW()` function is widely used. Examples given below.
 
+```sql
+SELECT NOW();         # 2020-08-13 21:16:10.665998+06
+SELECT NOW()::DATE;   # 2020-08-13
+SELECT NOW()::TIME;   # 21:17:09.700756
+```
+We can process this data further.
+
+| Operation                          | Function                                                                                                | Output                                |
+|------------------------------------|---------------------------------------------------------------------------------------------------------|---------------------------------------|
+| Subtract specific time from now    | SELECT NOW() - INTERVAL '2 YEAR 1 MONTH';                                                               | 2018-07-13 22:14:21.165973+06         |
+| Add specific time to now           | SELECT (NOW() - INTERVAL '2 YEAR 1 MONTH')::DATE;                                                       | 2018-07-13                            |
+| Get specific field using `EXTRACT` | SELECT EXTRACT(YEAR from NOW()); SELECT EXTRACT(MONTH from NOW()); SELECT EXTRACT(CENTURY from NOW());  | 2020 8 21                             |
+| Calculate age                      | SELECT AGE(NOW(), DATE '2007-7-7') AS age;                                                              | 13 years 1 mon 6 days 22:18:32.906531 |
