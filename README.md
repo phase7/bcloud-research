@@ -80,3 +80,41 @@ We can process this data further.
 | Add specific time to now           | SELECT (NOW() - INTERVAL '2 YEAR 1 MONTH')::DATE;                                                       | 2018-07-13                            |
 | Get specific field using `EXTRACT` | SELECT EXTRACT(YEAR from NOW()); SELECT EXTRACT(MONTH from NOW()); SELECT EXTRACT(CENTURY from NOW());  | 2020 8 21                             |
 | Calculate age                      | SELECT AGE(NOW(), DATE '2007-7-7') AS age;                                                              | 13 years 1 mon 6 days 22:18:32.906531 |
+
+## Export Query Results to a CSV File
+
+We can take the output of a query and save it as a CSV file. We'll use the following command.
+
+```sql
+\copy (SELECT * FROM tablename) TO '/path/to/csv' DELIMITER ',' CSV HEADER;
+```
+
+By changing the delimiter we can produce tsv as well.
+
+## Extensions
+
+Extensions can add additional functionalities. We can use `uuid`s by using an extension.
+
+```sql
+select * from pg_available_extensions where name like '%uuid%';
+```
+We get `uuid-ossp`.
+
+
+We can check all of the extensions available in PostgreSQL by using:
+
+```sql
+SELECT * FROM pg_available_extensions;
+```
+
+To install an extension:
+
+```sql
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+```
+We have to run it as the superuser. Otherwise we will face errors. So I have changed my role as superuser.
+```sql
+ALTER USER <your-user-name> WITH SUPERUSER;
+```
+
+Now we can see available functions by writing `\df`.
