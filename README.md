@@ -13,7 +13,7 @@ We can get into the shell by executing psql command. We will likely see our defa
 | \q        | quit psql                                                   |
 | \i FILE   | execute commands from file                                  |
 | \d        | list tables, views, and sequences                           |
-| \d TABLENAME| Show table schema                                        |
+| \d TABLENAME| Show table schema and other details of `TABLENAME` table                                  |
 | \l        | list databases                                              |
 | \c DBNAME | connect to new database DBNAME (currently default username) |
 | \x        | Expand view; To see long table records in a beautiful manner|
@@ -38,3 +38,5 @@ Following are some basic sql commands for beginners. (will update as I go on)
 | Filter data based on more than one condition | SELECT  *  FROM  tablename  WHERE  col1< 'value1'   AND  (col2>= 'value2'   OR  col3<> 'value3' );                                                                                                                   | Multiple conditions can be made with `AND` and `OR` operators. (`<>` is the `!=` for SQL)                                   |
 | Skip rows and get specific number of rows    | SELECT * FROM tablename OFFSET 5 LIMIT 5;                                                                                                                                                                            | To get row from 6 to 10. (While `OFFSET` is ANSI Standard, `LIMIT` is limited (_pun intended_) to `postgresql` and `mysql`) |
 | Same as above, but universal                 | SELECT * FROM tablename OFFSET 5 FETCH FIRST 5 ROW ONLY;                                                                                                                                                             | To get row from 6 to 10 following ANSI all the way. `FETCH` is present in all DB Engines.                                   |
+| Set data range                       | SELECT * FROM tablename WHERE col_name BETWEEN 'value1' AND 'value2';                        | get data output between given ranges                                                                     |
+| Check condition for particular cases | SELECT   *   FROM  tablename  WHERE  col_name  IN  ( ' value1 ' , ' value2 ' ,  ' value3 '); | check for selected conditions. this method can be helpful to get multiple  or conditions checked easily. |
