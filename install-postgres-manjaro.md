@@ -17,6 +17,13 @@ Next just run the following commands in the order shown -
 ```bash
 [postgres]$ initdb -D /var/lib/postgres/data
 ```
+After this you have to enable the postgres service and start the service.
+```bash
+sudo systemctl enable postgres
+```
+```bash
+sudo systemctl start postgres
+```
 ```sh
 [postgres]$ createuser --interactive
 ```
