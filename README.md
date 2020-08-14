@@ -1,12 +1,18 @@
 # bcloud-research
+This repo is about the research project launched  by Brilliant Cloud Technologies.
+
+# Postgresql
+<p align="center"><a href="https://www.postgresql.org/">
+<img align="center" src="https://raw.githubusercontent.com/solaimanhridoy/LearnPostgreSQl/master/img/postgresql-card.png">
+</a></p>
+
+At first we are getting hands dirty with postgresql on local machine.
 
 ## Installation
 Check out my [postgres installation overview](https://github.com/phase7/bcloud-research/blob/phase7-install-postgres/install-postgres-manjaro.md) to see how I installed on Manjaro.
 
-Below we will look at some of the most useful commands of postgres command line tool.
-
 ## Postgres Shell
-We can get into the shell by executing psql command. We will likely see our default user name. in this shell we can run the following commands to inspect database and execute  tasks. (will update as I go on)
+We can get into the shell by executing psql command. We will likely see our default user name. in this shell we can run the following commands to inspect database and execute  tasks. Below we will look at some of the most useful commands of postgres command line tool. (will update as I go on)
 
 | Commands  | What they do                                                |
 |-----------|-------------------------------------------------------------|
@@ -25,8 +31,8 @@ Following are some basic sql commands for beginners. (will update as I go on)
 
 | Operation                                    | Query                                                                                                                                                                                                                | What you should know about them                                                                                             |
 |----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| CREATE DATABASE                              | CREATE DATABASE dbname;                                                                                                                                                                                              | create a database named DBNAME                                                                                              |
-| DELETE DATABASE                              | CREATE DATABASE dbname;                                                                                                                                                                                              | Delete a database named DBNAME                                                                                              |
+| Create your database    | CREATE DATABASE dbname;                                                                                                                                                                                              | create a database named DBNAME                                                                                              |
+| Delete your DB                             | DROP DATABASE dbname;                                                                                                                                                                                              | Delete a database named DBNAME                                                                                              |
 | Create a table                               | CREATE TABLE person (   id BIGSERIAL NOT NULL PRIMARY KEY,   first_name VARCHAR(50) NOT NULL,   last_name VARCHAR(50) NOT NULL,   gender VARCHAR(8) NOT NULL,   email VARCHAR(150),   date_of_birth DATE NOT NULL ); | Create a new table schema with constarints                                                                                  |
 | Delete a table                               | DROP TABLE tablename                                                                                                                                                                                                 | Delete a table. In db this is colloquilly called dropping a table.                                                          |
 | Insert new value in table                    | INSERT INTO tablename (   col_name ) VALUES ('value');                                                                                                                                                               | insert `value` in the `col_name` column of `tablename` table                                                                |
