@@ -1,5 +1,20 @@
 # bcloud-research
 This repo is about the research project launched  by Brilliant Cloud Technologies.
+> Table of Contents
+- [Postgresql](#postgresql)
+  * [Installation](#installation)
+  * [Postgres Shell](#postgres-shell)
+  * [Basic SQL (common operations and keywords)](#basic-sql--common-operations-and-keywords-)
+  * [Intermediate SQL (Operators and operations)](#intermediate-sql--operators-and-operations-)
+  * [Aggregate Funtions](#aggregate-funtions)
+    + [Examples](#examples)
+    + [Difference between `HAVING` and `WHERE`](#difference-between--having--and--where-)
+  * [Join operations](#join-operations)
+  * [Date and Time  on Postgres](#date-and-time--on-postgres)
+  * [Export Query Results to a CSV File](#export-query-results-to-a-csv-file)
+  * [Extensions](#extensions)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 # Postgresql
 <p align="center"><a href="https://www.postgresql.org/">
