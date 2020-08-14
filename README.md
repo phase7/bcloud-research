@@ -17,6 +17,7 @@ We can get into the shell by executing psql command. We will likely see our defa
 | \l        | list databases                                              |
 | \c DBNAME | connect to new database DBNAME (currently default username) |
 | \x        | Expand view; To see long table records in a beautiful manner|
+| \df        | View available functions; like uuid generation.|
 
 ## Basic SQL (common operations and keywords)
 
