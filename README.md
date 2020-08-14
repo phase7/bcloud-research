@@ -64,12 +64,14 @@ Following are some basic sql commands for beginners. (will update as I go on)
 | Add foreign key                        | CREATE TABLE person (id BIGSERIAL NOT NULL PRIMARY KEY,first_name VARCHAR(50) NOT NULL,last_name VARCHAR(50) NOT NULL,car_id BIGINT REFERENCES car (id),UNIQUE (car_id) );      | Add a foreign key column using `REFERENCE` keyword                                                                                                                                                                                   |
 
 ## Join operations
-[Join from postgres](https://www.postgresql.org/docs/12/queries-table-expressions.html#QUERIES-FROM)
+![sql-join-w3school]
 
 | Operation                                            | Query                                                  | What you should know about them                                                              |
 |------------------------------------------------------|--------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | Inner join, get the common result                    | `SELECT * FROM person JOIN car ON person.car_id=car.id;` | merge two tables based on the condition and get only the common result(s)                  |
 | Left join, get the common plus all of the left table | SELECT * FROM person LEFT JOIN car using(car_uid)      | In this join you'll get all inner join results with the complete left table you have joined. |
+
+[Different `join` operations from postgres official doc](https://www.postgresql.org/docs/12/queries-table-expressions.html#QUERIES-FROM)
 
 ## Date and Time  on Postgres
 For date and time operations, the `NOW()` function is widely used. Examples given below.
@@ -125,3 +127,5 @@ ALTER USER <your-user-name> WITH SUPERUSER;
 ```
 
 Now we can see available functions by writing `\df`.
+
+[sql-join-w3school]: https://github.com/phase7/bcloud-research/blob/master/assets/sql-join-w3school_20200814_113424.png "sql-join-w3school"
