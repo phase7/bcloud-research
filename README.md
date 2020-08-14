@@ -97,6 +97,14 @@ Here are the ageneral aggregate functions available for postgres.
 
 For more functions that are useful for staistics and such, follow [this link](https://www.postgresql.org/docs/current/functions-aggregate.html).
 
+### Difference between `HAVING` and `WHERE`
+ | Where                                                        | Having                                                       |
+   | ------------------------------------------------------------ | ------------------------------------------------------------ |
+   | **`WHERE` selects input rows before groups and aggregates are computed** | **`HAVING` selects group rows after groups and aggregates are computed** |
+   | `WHERE` clause must not contain aggregate functions          | `HAVING` clause contains aggregate functions most of the time |
+   | You can use `WHERE` without group by clause.                 | You cannot use `HAVING` without group by clause.             |
+
+
 ## Join operations
 ![sql-join-w3school]
 
