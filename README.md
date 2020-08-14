@@ -88,6 +88,13 @@ Here are the ageneral aggregate functions available for postgres.
 |  sum(expression)                   | smallint, int, bigint, real, double precision, numeric, interval, or money      | bigint for smallint or int arguments, numeric for bigint arguments, otherwise the same as the argument data type                    | Yes          | sum of expression across all non-null input values                                                                                     |
 |  xmlagg(expression)                | xml                                                                             | xml                                                                                                                                 | No           | concatenation of non-null XML values (see also Section 9.14.1.7)                                                                       |
 
+### Examples
+
+|              Operation             |                                       Query                                      |                                                    What you should know about them                                                   |
+|:----------------------------------:|:--------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------:|
+| Count all unique values            | SELECT   col_name ,  COUNT (*)  FROM  tablename  GROUP BY   col_name ;           | `COUNT(*)` calculates all occurances of a value. You can use `GROUP BY` to select a row where you want to execute this operation on. |
+| Same as above, but with conditions | SELECT col_name, COUNT(*) FROM tablename GROUP BY col_name HAVING COUNT(*) > 10; | `HAVING` keyword is somewhat same as `WHERE`, it can help set conditions                                                             |
+
 For more functions that are useful for staistics and such, follow [this link](https://www.postgresql.org/docs/current/functions-aggregate.html).
 
 ## Join operations
