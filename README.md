@@ -91,12 +91,14 @@ Here are the ageneral aggregate functions available for postgres.
 For more functions that are useful for staistics and such, follow [this link](https://www.postgresql.org/docs/current/functions-aggregate.html).
 
 ## Join operations
-[Join from postgres](https://www.postgresql.org/docs/12/queries-table-expressions.html#QUERIES-FROM)
+![sql-join-w3school]
 
 | Operation                                            | Query                                                  | What you should know about them                                                              |
 |------------------------------------------------------|--------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | Inner join, get the common result                    | `SELECT * FROM person JOIN car ON person.car_id=car.id;` | merge two tables based on the condition and get only the common result(s)                  |
 | Left join, get the common plus all of the left table | SELECT * FROM person LEFT JOIN car using(car_uid)      | In this join you'll get all inner join results with the complete left table you have joined. |
+
+[Different `join` operations from postgres official doc](https://www.postgresql.org/docs/12/queries-table-expressions.html#QUERIES-FROM)
 
 ## Date and Time  on Postgres
 For date and time operations, the `NOW()` function is widely used. Examples given below.
@@ -152,3 +154,5 @@ ALTER USER <your-user-name> WITH SUPERUSER;
 ```
 
 Now we can see available functions by writing `\df`.
+
+[sql-join-w3school]: https://github.com/phase7/bcloud-research/blob/master/assets/sql-join-w3school_20200814_113424.png "sql-join-w3school"
