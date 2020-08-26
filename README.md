@@ -36,6 +36,7 @@ We can get into the shell by executing psql command. We will likely see our defa
 | \c DBNAME | connect to new database DBNAME (currently default username) |
 | \x        | Expand view; To see long table records in a beautiful manner|
 | \df        | View available functions; like uuid generation.|
+| \dt        | View available tables in current DB |
 
 ## Basic SQL (common operations and keywords)
 
